@@ -1,7 +1,21 @@
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Base64;
+import java.util.Random;
 import java.util.Scanner;
+
+
+
+/*import java.io.File; 
+import javax.sound.sampled.AudioInputStream; 
+import javax.sound.sampled.AudioSystem; 
+import javax.sound.sampled.Clip; 
+import javax.sound.sampled.LineUnavailableException; 
+import javax.sound.sampled.UnsupportedAudioFileException;*/
+
+
+// import javax.swing.plaf.basic.BasicSplitPaneUI;
+
 
 class powerTakeAway{
     static void typewrite(String name, int sec, int linsec){
@@ -11,45 +25,41 @@ class powerTakeAway{
             for(j=0; j<nameray.length;j++){
                 for(i=0; i<nameray[j].length();i++){
                     System.out.printf("%c", nameray[j].charAt(i));
-                    try{
-                        Thread.sleep(sec); 
-                    } catch(InterruptedException e){
-                        Thread.currentThread().interrupt();
-                    
-                    }
+                    delay(sec);
                 }
                 System.out.printf("\n");
-                try{
-                    Thread.sleep(linsec); 
-                } catch(InterruptedException ex){
-                    Thread.currentThread().interrupt();
-                
-                }
+                delay(linsec);
             }   
             
         }
-    public static void main(String[] args) {
-        String[] anslist = {"MTM=", "TklFVFpTQ0hF","Qk9NQkU=", "R09EIElTIERFQUQuIEdPRCBSRU1BSU5TIERFQUQuIEFORCBXRSBIQVZFIEtJTExFRCBISU0uIEhPVyBTSEFMTCBXRSBDT01GT1JUIE9VUlNFTFZFUywgVEhFIE1VUkRFUkVSUyBPRiBBTEwgTVVSREVSRVJTPyA=", "R09EIElTIERFQUQuIEdPRCBSRU1BSU5TIERFQUQuIEFORCBXRSBIQVZFIEtJTExFRCBISU0uIEhPVyBTSEFMTCBXRSBDT01GT1JUIE9VUlNFTFZFUywgVEhFIE1VUkRFUkVSUyBPRiBBTEwgTVVSREVSRVJTPw=="};
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("Try programiz.pro");
-        String inp = keyboard.nextLine();
-        Boolean tinp = inp.toUpperCase().contains("disagree".toUpperCase()) || inp.toUpperCase().contains("no".toUpperCase());
-        if (tinp==true) {
-            System.out.println("Noooo my power");
-            String inp0 = keyboard.nextLine();
-            if(inp0.equals("")){
-                try{
-                   Thread.sleep(1000); 
+    static void delay(int milsec){
+        try{
+                   Thread.sleep(milsec); 
                 } catch(InterruptedException e){
                     Thread.currentThread().interrupt();
                 
                 }
+    }
+    public static void main(String[] args) {
+        String[] anslist = {"MTM=", "TklFVFpTQ0hF","Qk9NQkU=", "S1JZUFRPUw==", "T1BQRU5IRUlNRVI=", "R09EIElTIERFQUQuIEdPRCBSRU1BSU5TIERFQUQuIEFORCBXRSBIQVZFIEtJTExFRCBISU0uIEhPVyBTSEFMTCBXRSBDT01GT1JUIE9VUlNFTFZFUywgVEhFIE1VUkRFUkVSUyBPRiBBTEwgTVVSREVSRVJTPyA=", "R09EIElTIERFQUQuIEdPRCBSRU1BSU5TIERFQUQuIEFORCBXRSBIQVZFIEtJTExFRCBISU0uIEhPVyBTSEFMTCBXRSBDT01GT1JUIE9VUlNFTFZFUywgVEhFIE1VUkRFUkVSUyBPRiBBTEwgTVVSREVSRVJTPw=="};
+        String[] insults = {"How do you crack my code and not know what to type? Dissapointing.", "What, did you make a spelling mistake? Try again.", "Wrong! How many times do we gotta keep doing this?", "Its not that difficult to search it up if you don't know anything.", "So close, yet so far. Nah jk you weren't even close to fast enough.", "Bit slow aren't you? Bit is an understatement.", "OOH ALMOST THERE!! Thats a joke. Im joking. Im now a clown because of you.", "**Can we get much faster?**, *So fast..* Nah it doesn't seem we can."};
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Try programiz.pro");
+        String inp = keyboard.nextLine();
+        Random random = new Random();
+        Boolean tinp = inp.toUpperCase().contains("disagree".toUpperCase()) || inp.toUpperCase().contains("no".toUpperCase());
+        if (tinp==true) {
+            System.out.println("Noooo my power");
+            String inp0 = keyboard.nextLine();
+            String name = keyboard.nextLine();
+            if(inp0.equals("")){
+                delay(1000);
                 String outt = "You have won.\nNow what will you do?\nWhat is your next target?\nNo one stands in your way.";
                 typewrite(outt, 75, 300);
-                String strtmsg = "\nYour move now, [Insert Name Here]";
+                String strtmsg = "\nYour move now, "+name+".";
                 typewrite(strtmsg, 75, 600);
                 keyboard.nextLine();
-                typewrite("\nActually I don't care. \nI really hope you didn't think it's over.\nDon't worry, you won't need to-\nTbq Vf Qrnq. Tbq Erznvaf Qrnq.\n-Goddamn ceaser messing with my-\nSld wrw gsv Mzarh hfuuvi fmwvi Gfirmt'h ivrtm? Sld wrw gsrh lmv nzm ivzw Srgovi'h nrmw?\n-And now Ngonfu is having a fun time as well.\nI know you won't be able to do much at all, and you will suffer.\nSuffer for not trying programiz.pro\nHAHAHAAHHAHAHAHAHAHAH\nAnyway go in order if you have to.\nIf you must, figure out ceaser's number", 50, 300);
+                typewrite("Actually I don't care. \nI really hope you didn't think it's over.\nDon't worry, you won't need to-\nTbq Vf Qrnq. Tbq Erznvaf Qrnq.\n-Goddamn ceaser messing with my-\nSld wrw gsv Mzarh hfuuvi fmwvi Gfirmt'h ivrtm? Sld wrw gsrh lmv nzm ivzw Srgovi'h nrmw?\n-And now Ngonfu is having a fun time as well.\nI know you won't be able to do much at all, and you will suffer.\nSuffer for not trying programiz.pro\nHAHAHAAHHAHAHAHAHAHAH\nQrn Hzmylim\nXfu X aono scrhaw nvyia, hzo uchmfgivp dy kgbcbh.\nDamn this channel is insecure. Anyway go in order if you have to.\nIf you must, figure out ceaser's number", 50, 300);
                 String inp1 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
                 while(!inp1.contains(anslist[0])){
                     inp1 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
@@ -59,28 +69,70 @@ class powerTakeAway{
                 while(!inp2.contains(anslist[1])){
                     inp2 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
                 }
-                typewrite("Tricky one, aren't you?\nI will trust in my final defense however.\nGood luck.", 60, 350);
+                typewrite("Tricky one, aren't you?\nLet's see if you are better than the ENIGMAtic man himself.", 60, 350);
                 String inp3 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
                 while(!inp3.contains(anslist[2])){
                     inp3 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
                 }
-                typewrite("You monster.\nYou beat my code, sure, buy you can't beat my speed.\nIf you need to know what to type, refer back to what the slaughtering man refered to. It ends with the first question he asks.\nYour time starts..\nNow", 60, 350);
-                int len;
+                typewrite("I'm gonna have to fire my cryptographer.\nHe didn't do as well of a job here as he did at the Climate Interested Americans.", 60, 350);
+                String inp4 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
+                while(!inp4.contains(anslist[3])){
+                    inp4 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
+                }
+                typewrite("OH GOD YOU'RE CLOSE.\nListen, "+name+". Don't finish it. You'll regret it more than the man himself. ", 60, 350);
+                String inp5 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
+                while(!inp5.contains(anslist[4])){
+                    inp5 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
+                }
+                typewrite("You monster.\nYou didn't have to do this.\nI need to throw my final defense at you.\nLet's see if you're as fast as you are smart.\nAbout 80 should do it, don't you think?\nIf you need to know what to type, refer back to what the slaughtering man refered to. It ends with the first question he asks.\nYour time starts..\nNow\nJust press enter before you start typing. No cheating!", 60, 350);
+                keyboard.nextLine();
                 while (true) {
                     Instant start = Instant.now();
-                    String inp4 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
-                    if((inp4.equals(anslist[3])) || ((inp4.equals(anslist[4])))){
+                    String inp6 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
+                    
+                    if((inp6.equals(anslist[anslist.length-1])) || ((inp6.equals(anslist[anslist.length-2])))){
                         Instant end = Instant.now();
-                        len = inp4.length();
-                        System.out.println(Duration.between(start, end));
-                        break;
+                        long dur = Duration.between(start, end).toSeconds();
+                        //System.out.println("Dur: "+dur);
+                        double durr = Math.toIntExact(dur);
+                        //System.out.println("Durr: "+durr);
+                        double findur = durr/60;
+                        double wpm = 21/findur; // Problem here
+                        /*Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at powerTakeAway.main(bossfight.java:84)*/
+                        //Problem fixed BY taking double instead of int values on each thing, much better and gives proper output. 
+                        if(wpm>=80){
+                            if(wpm>=300){
+                                typewrite("No no, no copy pasting! With your "+wpm+ " wpm. You aren't a god, I am well aware. Type it properly this time. Press enter before continuing.", 50, 100);
+                                keyboard.nextLine();
+                            }
+                            else{
+                                typewrite("No you didn't, "+name+".\nYou did not just type at "+wpm+" WPM.\nI gave you so many chances, and you squander them all!?\nThis is how you repay my hospitality?\nThis is how you treat my completely processable and-not-at-all-inconsistency-ridden game?\nNo choice you leave me, do you?\nYou are going to be having a very bad time.\n", 60, 350);
+                            break;
+                            }
+                            
+                        }
+                        else{
+                            System.out.println(wpm+" WPM.");
+                            System.out.println(insults[random.nextInt(4)+4]+" Press enter before continuing.");
+                            keyboard.nextLine();
+                            
+                        }
                     }
                     else{
-                        System.out.println("Try again. Bit slow, are you not? Press enter before continuing.");
+                        System.out.println(insults[random.nextInt(4)]+" Press enter before continuing.");
                         keyboard.nextLine();
                     
                     }
-                }}    
+                }
+                // Start here
+                typewrite("\nOh, you hear that, don't you?\nIt's a beautiful day outside. Flowers are blooming, birds are chirping.\nOn days like these, codebreakers like you...\nSHOULD BE BURNING IN HELL", 50, 300);
+
+                
+            
+            
+            
+            }    
                 
                           
             }
