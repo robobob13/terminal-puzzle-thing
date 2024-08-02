@@ -28,7 +28,7 @@ class powerTakeAway{
                     System.out.printf("%c", nameray[j].charAt(i));
                     delay(sec);
                     if(nameray[j].charAt(i)=='.'){
-                        delay(1000);
+                        delay(30);
                     }
                     if(nameray[j].charAt(i)==','){
                         delay(15);
