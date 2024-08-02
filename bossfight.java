@@ -1,9 +1,10 @@
+// Made by robobob13 on github. 
+
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Base64;
 import java.util.Random;
 import java.util.Scanner;
-
 
 
 /*import java.io.File; 
@@ -23,9 +24,18 @@ class powerTakeAway{
             int j;
             String[] nameray = name.split("\\n",0);
             for(j=0; j<nameray.length;j++){
-                for(i=0; i<nameray[j].length();i++){
+                for(i=0; i<nameray[j].length();i++  ){
                     System.out.printf("%c", nameray[j].charAt(i));
                     delay(sec);
+                    if(nameray[j].charAt(i)=='.'){
+                        delay(1000);
+                    }
+                    if(nameray[j].charAt(i)==','){
+                        delay(15);
+                    }
+                    if(nameray[j].charAt(i)==';'){
+                        delay(25);
+                    }
                 }
                 System.out.printf("\n");
                 delay(linsec);
@@ -42,9 +52,10 @@ class powerTakeAway{
     }
     public static void main(String[] args) {
         String[] anslist = {"MTM=", "TklFVFpTQ0hF","Qk9NQkU=", "S1JZUFRPUw==", "T1BQRU5IRUlNRVI=", "R09EIElTIERFQUQuIEdPRCBSRU1BSU5TIERFQUQuIEFORCBXRSBIQVZFIEtJTExFRCBISU0uIEhPVyBTSEFMTCBXRSBDT01GT1JUIE9VUlNFTFZFUywgVEhFIE1VUkRFUkVSUyBPRiBBTEwgTVVSREVSRVJTPyA=", "R09EIElTIERFQUQuIEdPRCBSRU1BSU5TIERFQUQuIEFORCBXRSBIQVZFIEtJTExFRCBISU0uIEhPVyBTSEFMTCBXRSBDT01GT1JUIE9VUlNFTFZFUywgVEhFIE1VUkRFUkVSUyBPRiBBTEwgTVVSREVSRVJTPw=="};
-        String[] insults = {"How do you crack my code and not know what to type? Dissapointing.", "What, did you make a spelling mistake? Try again.", "Wrong! How many times do we gotta keep doing this?", "Its not that difficult to search it up if you don't know anything.", "So close, yet so far. Nah jk you weren't even close to fast enough.", "Bit slow aren't you? Bit is an understatement.", "OOH ALMOST THERE!! Thats a joke. Im joking. Im now a clown because of you.", "**Can we get much faster?**, *So fast..* Nah it doesn't seem we can."};
+        String[] insults = {"How do you crack my code and not know what to type? Dissapointing.", "What, did you make a spelling mistake? Try again.", "Wrong! How many times are we going to keep doing this?", "Its not that difficult to search it up if you don't know anything.", "So close, yet so far. Nah jk you weren't even close to fast enough.", "Bit slow aren't you? Bit is an understatement.", "OOH ALMOST THERE!! Thats a joke. Im joking. Im now a clown because of you.", "**Can we get much faster?**, *So fast..* Nah it doesn't seem we can."};
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Try programiz.pro");
+        
         String inp = keyboard.nextLine();
         Random random = new Random();
         Boolean tinp = inp.toUpperCase().contains("disagree".toUpperCase()) || inp.toUpperCase().contains("no".toUpperCase());
@@ -59,7 +70,7 @@ class powerTakeAway{
                 String strtmsg = "\nYour move now, "+name+".";
                 typewrite(strtmsg, 75, 600);
                 keyboard.nextLine();
-                typewrite("Actually I don't care. \nI really hope you didn't think it's over.\nDon't worry, you won't need to-\nTbq Vf Qrnq. Tbq Erznvaf Qrnq.\n-Goddamn ceaser messing with my-\nSld wrw gsv Mzarh hfuuvi fmwvi Gfirmt'h ivrtm? Sld wrw gsrh lmv nzm ivzw Srgovi'h nrmw?\n-And now Ngonfu is having a fun time as well.\nI know you won't be able to do much at all, and you will suffer.\nSuffer for not trying programiz.pro\nHAHAHAAHHAHAHAHAHAHAH\nQrn Hzmylim\nXfu X aono scrhaw nvyia, hzo uchmfgivp dy kgbcbh.\nDamn this channel is insecure. Anyway go in order if you have to.\nIf you must, figure out ceaser's number", 50, 300);
+                typewrite("Actually nevermind. \nI really hope you didn't think it's over.\nDon't worry, you won't need to-\nTbq Vf Qrnq. Tbq Erznvaf Qrnq.\n-Goddamn ceaser messing with my-\nSld wrw gsv Mzarh hfuuvi fmwvi Gfirmt'h ivrtm? Sld wrw gsrh lmv nzm ivzw Srgovi'h nrmw?\n-And now Ngonfu is having a fun time as well.\nI know you won't be able to do much at all, and you will suffer.\nSuffer for not trying programiz.pro\nHAHAHAAHHAHAHAHAHAHAH\nQrn Hzmylim\nXfu X aono scrhaw nvyia, hzo uchmfgivp dy kgbcbh.\nDamn this channel is insecure. Anyway go in order if you have to.\nIf you must, figure out ceaser's number", 50, 200);
                 String inp1 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
                 while(!inp1.contains(anslist[0])){
                     inp1 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
@@ -86,7 +97,9 @@ class powerTakeAway{
                 }
                 typewrite("You monster.\nYou didn't have to do this.\nI need to throw my final defense at you.\nLet's see if you're as fast as you are smart.\nAbout 80 should do it, don't you think?\nIf you need to know what to type, refer back to what the slaughtering man refered to. It ends with the first question he asks.\nYour time starts..\nNow\nJust press enter before you start typing. No cheating!", 60, 350);
                 keyboard.nextLine();
+                int attempt = 0;
                 while (true) {
+                    attempt+=1;
                     Instant start = Instant.now();
                     String inp6 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
                     
@@ -107,7 +120,7 @@ class powerTakeAway{
                                 keyboard.nextLine();
                             }
                             else{
-                                typewrite("No you didn't, "+name+".\nYou did not just type at "+wpm+" WPM.\nI gave you so many chances, and you squander them all!?\nThis is how you repay my hospitality?\nThis is how you treat my completely processable and-not-at-all-inconsistency-ridden game?\nNo choice you leave me, do you?\nYou are going to be having a very bad time.\n", 60, 350);
+                                typewrite("No you didn't, "+name+".\nYou did not just type at "+wpm+" WPM.\nAnd it took you " +attempt+" attempts..? I gave you so many chances, and you squander them all!?\nThis is how you repay my hospitality?\nThis is how you treat my completely processable and-not-at-all-inconsistency-ridden game?\nNo choice you leave me, do you?\nYou are going to be having a very bad time.\n", 60, 350);
                             break;
                             }
                             
