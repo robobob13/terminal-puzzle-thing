@@ -27,7 +27,7 @@ class powerTakeAway{
                 for(i=0; i<nameray[j].length();i++  ){
                     System.out.printf("%c", nameray[j].charAt(i));
                     delay(sec);
-                    if(nameray[j].charAt(i)=='.'){
+                    if((nameray[j].charAt(i)=='.') && (nameray[j].charAt(((i+1)%nameray.length))==' ')){
                         delay(30);
                     }
                     if(nameray[j].charAt(i)==','){
@@ -51,8 +51,9 @@ class powerTakeAway{
                 }
     }
     public static void main(String[] args) {
-        String[] anslist = {"MTM=", "TklFVFpTQ0hF","Qk9NQkU=", "S1JZUFRPUw==", "T1BQRU5IRUlNRVI=", "R09EIElTIERFQUQuIEdPRCBSRU1BSU5TIERFQUQuIEFORCBXRSBIQVZFIEtJTExFRCBISU0uIEhPVyBTSEFMTCBXRSBDT01GT1JUIE9VUlNFTFZFUywgVEhFIE1VUkRFUkVSUyBPRiBBTEwgTVVSREVSRVJTPyA=", "R09EIElTIERFQUQuIEdPRCBSRU1BSU5TIERFQUQuIEFORCBXRSBIQVZFIEtJTExFRCBISU0uIEhPVyBTSEFMTCBXRSBDT01GT1JUIE9VUlNFTFZFUywgVEhFIE1VUkRFUkVSUyBPRiBBTEwgTVVSREVSRVJTPw=="};
+        String[] anslist = {"MTM=", "TklFVFpTQ0hF","Qk9NQkU=", "S1JZUFRPUw==", "T1BQRU5IRUlNRVI=", "SSBBTSBBVE9NSUM=","R09EIElTIERFQUQuIEdPRCBSRU1BSU5TIERFQUQuIEFORCBXRSBIQVZFIEtJTExFRCBISU0uIEhPVyBTSEFMTCBXRSBDT01GT1JUIE9VUlNFTFZFUywgVEhFIE1VUkRFUkVSUyBPRiBBTEwgTVVSREVSRVJTPyA=", "R09EIElTIERFQUQuIEdPRCBSRU1BSU5TIERFQUQuIEFORCBXRSBIQVZFIEtJTExFRCBISU0uIEhPVyBTSEFMTCBXRSBDT01GT1JUIE9VUlNFTFZFUywgVEhFIE1VUkRFUkVSUyBPRiBBTEwgTVVSREVSRVJTPw=="};
         String[] insults = {"How do you crack my code and not know what to type? Dissapointing.", "What, did you make a spelling mistake? Try again.", "Wrong! How many times are we going to keep doing this?", "Its not that difficult to search it up if you don't know anything.", "So close, yet so far. Nah jk you weren't even close to fast enough.", "Bit slow aren't you? Bit is an understatement.", "OOH ALMOST THERE!! Thats a joke. Im joking. Im now a clown because of you.", "**Can we get much faster?**, *So fast..* Nah it doesn't seem we can."};
+        String[] boll = {"It is certain", "It is decidedly so", "Without a doubt", "Yes definitely", "You may rely on it", "As I see it, yes", "Most likely", "Outlook good", "Yes", "Signs point to yes", "Reply hazy, try again", "Ask again later", "Better not tell you now", "Cannot predict now", "Concentrate and ask again", "Don’t count on it", "My reply is no", "My sources say no", "Outlook not so good", "Very doubtful", "WW91IGZvb2wu"};
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Try programiz.pro");
         
@@ -70,40 +71,65 @@ class powerTakeAway{
                 String strtmsg = "\nYour move now, "+name+".";
                 typewrite(strtmsg, 75, 600);
                 keyboard.nextLine();
-                typewrite("Actually nevermind. \nI really hope you didn't think it's over.\nDon't worry, you won't need to-\nTbq Vf Qrnq. Tbq Erznvaf Qrnq.\n-Goddamn ceaser messing with my-\nSld wrw gsv Mzarh hfuuvi fmwvi Gfirmt'h ivrtm? Sld wrw gsrh lmv nzm ivzw Srgovi'h nrmw?\n-And now Ngonfu is having a fun time as well.\nI know you won't be able to do much at all, and you will suffer.\nSuffer for not trying programiz.pro\nHAHAHAAHHAHAHAHAHAHAH\nQrn Hzmylim\nXfu X aono scrhaw nvyia, hzo uchmfgivp dy kgbcbh.\nDamn this channel is insecure. Anyway go in order if you have to.\nIf you must, figure out ceaser's number", 50, 200);
+                int ballin = boll.length;
+                typewrite("Actually nevermind. \nI really hope you didn't think it's over.\nDon't worry, you won't need to-\nTbq Vf Qrnq. Tbq Erznvaf Qrnq.\n-Goddamn ceaser messing with my-\nSld wrw gsv Mzarh hfuuvi fmwvi Gfirmt'h ivrtm? Sld wrw gsrh lmv nzm ivzw Srgovi'h nrmw?\n-And now Ngonfu is having a fun time as well.\nI know you won't be able to do much at all, and you will suffer.\nSuffer for not trying programiz.pro\nHAHAHAAHHAHAHAHAHAHAH\nQrn Hzmylim\nXfu X aono scrhaw nvyia, hzo uchmfgivp dy kgbcbh.\nVr sqf nallw pg fny dhxqkyk vbu mehjd vqp gncsabb.\nDamn this channel is insecure. Anyway go in order if you have to.\nIf you must, figure out ceaser's number", 50, 200);
                 String inp1 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
                 while(!inp1.contains(anslist[0])){
                     inp1 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
+                    if(!inp1.contains(anslist[0])){
+                        System.out.println(boll[random.nextInt(ballin)]);
+                    }
                 }
-                typewrite("HOW DID YOU\nNever mind that, you surely won't figure out the man behind the slaughter.", 60, 350);
+                typewrite("HOW DID YOU\nRight you can access the internet. Never mind that, you surely won't figure out the man behind the slaughter.", 60, 350);
                 String inp2 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
                 while(!inp2.contains(anslist[1])){
                     inp2 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
+                    if(!inp2.contains(anslist[1])){
+                        System.out.println(boll[random.nextInt(ballin)]);
+                    }
                 }
                 typewrite("Tricky one, aren't you?\nLet's see if you are better than the ENIGMAtic man himself.", 60, 350);
                 String inp3 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
                 while(!inp3.contains(anslist[2])){
                     inp3 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
+                    if(!inp3.contains(anslist[2])){
+                        System.out.println(boll[random.nextInt(ballin)]);
+                    }
                 }
                 typewrite("I'm gonna have to fire my cryptographer.\nHe didn't do as well of a job here as he did at the Climate Interested Americans.", 60, 350);
                 String inp4 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
                 while(!inp4.contains(anslist[3])){
                     inp4 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
+                    if(!inp4.contains(anslist[3])){
+                        System.out.println(boll[random.nextInt(ballin)]);
+                    }
                 }
                 typewrite("OH GOD YOU'RE CLOSE.\nListen, "+name+". Don't finish it. You'll regret it more than the man himself. ", 60, 350);
                 String inp5 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
                 while(!inp5.contains(anslist[4])){
                     inp5 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
+                    if(!inp5.contains(anslist[4])){
+                        System.out.println(boll[random.nextInt(ballin)]);
+                    }
                 }
-                typewrite("You monster.\nYou didn't have to do this.\nI need to throw my final defense at you.\nLet's see if you're as fast as you are smart.\nAbout 80 should do it, don't you think?\nIf you need to know what to type, refer back to what the slaughtering man refered to. It ends with the first question he asks.\nYour time starts..\nNow\nJust press enter before you start typing. No cheating!", 60, 350);
+                typewrite("OH SCHIZE THERE'S ONLY 1 LEFT.\nYou did this to yourself "+name+". Playtime's over. Ill simply have to become nuclear myself.",60,350);
+                String inp6 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
+                while(!inp6.contains(anslist[5])){
+                    inp6 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
+                    if(!inp6.contains(anslist[5])){
+                        System.out.println(boll[random.nextInt(ballin)]);
+                    }
+                }
+
+                typewrite("You monster.\nYou didn't have to do this.\nI need to throw my final defense at you.\nLet's see if you're as fast as you are smart.\nAbout 80 should do it, don't you think?\nIf you need to know what to type, refer back to what the slaughtering man refered to. The Madman. The Madman from Wikipedia.     It ends with the first question he asks.\nYour time starts..\nNow\nJust press enter before you start typing. No cheating!", 60, 350);
                 keyboard.nextLine();
                 int attempt = 0;
                 while (true) {
                     attempt+=1;
                     Instant start = Instant.now();
-                    String inp6 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
+                    String inp7 = Base64.getEncoder().encodeToString(keyboard.nextLine().toUpperCase().getBytes());
                     
-                    if((inp6.equals(anslist[anslist.length-1])) || ((inp6.equals(anslist[anslist.length-2])))){
+                    if((inp7.equals(anslist[anslist.length-1])) || ((inp7.equals(anslist[anslist.length-2])))){
                         Instant end = Instant.now();
                         long dur = Duration.between(start, end).toSeconds();
                         //System.out.println("Dur: "+dur);
